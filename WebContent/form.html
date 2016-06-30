@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm(){	
+	var x = document.forms["form1"]["name"].value;
+	if (x==null||x==""){
+		alert("Name must be filled out!");
+		return false;
+	} else{
+		if (validateNumber() == false)
+			return false;
+	}
+}
+
+function validateNumber(){
+	var y = document.forms["form1"]["number"].value;
+	if (y==null||y==""){
+		alert("Number must be filled out!");
+		return false;
+	}
+}
+
+</script>
+<meta charset="UTF-8">
+<title>Grand Chirpus Coding Dojo</title>
+</head>
+<body>
+<h1 align = center style=color:orange> Grant Chirpus Coding Dojo</h1>
+<form name="form1" action="index.jsp" method="post" onsubmit="return validateForm()">
+	Your Name: <input name="name" type="text"><br>
+	Lucky Number: <input name="number" type="number"><br>
+	Age (optional): <br><input name="age" type="radio" value = "0-10"> 0-10 years<br>
+	<input name ="age" type="radio" value = "11-20"> 11-20 years<br>
+	<input name ="age" type="radio" value = "21-30"> 21-30 years<br>
+	<input name = "age" type="radio" value = "31-40"> 31-40 years<br>
+	<input name = "age" type="radio" value = "41-50"> 41-50 years<br>
+	<input name = "age" type="radio" value = "50+"> 50+ years<br>
+	<button type="submit">Submit!</button>
+</form>
+</body>
+</html>
